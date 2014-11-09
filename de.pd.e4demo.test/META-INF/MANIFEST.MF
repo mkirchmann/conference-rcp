@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: de.pd.e4demo Test
+Bundle-SymbolicName: de.pd.e4demo.test
+Bundle-Version: 1.0.0.qualifier
+Fragment-Host: de.pd.e4demo;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ClassPath: lib/assertj-core-1.7.0.jar,
+ lib/mockito-all-1.9.5.jar,
+ .
