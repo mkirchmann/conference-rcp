@@ -19,7 +19,8 @@ import de.pd.e4demo.model.ConferenceClientModel;
 import de.pd.e4demo.model.TalkClientModel;
 import de.pd.e4demo.parts.ConferenceEditor;
 import de.pd.e4demo.parts.TalkEditor;
-import de.pd.e4demo.parts.helper.PartWithInput;
+import de.pd.e4demo.parts.helper.MPartHelper;
+import de.pd.e4demo.parts.helper.MPartStackHelper;
 
 public class EditHandler {
 
@@ -43,9 +44,11 @@ public class EditHandler {
 		final MPart part;
 		final MPartStack editorArea = (MPartStack) modelService.find(
 				"de.pd.e4demo.partstack.editorarea", application);
+		final MPartStackHelper partStackHelper = new MPartStackHelper(
+				editorArea);
 		final List<MStackElement> children = editorArea.getChildren();
-		final MPart partMatchingInput = findPartWithMatchingInput(selection,
-				children);
+		final MPart partMatchingInput = partStackHelper
+				.findPartWithMatchingInput(selection);
 		if (partMatchingInput == null) {
 			if (selection instanceof ConferenceClientModel) {
 				id = ConferenceEditor.ID;
@@ -55,8 +58,9 @@ public class EditHandler {
 				id = null;
 			}
 			if (id != null) {
-				part = partService.showPart(id, PartState.CREATE);
-				setInput(part, selection);
+				part = partService.createPart(id);
+				partService.showPart(part, PartState.CREATE);
+				new MPartHelper(part).setInput(selection);
 				partService.showPart(part, PartState.ACTIVATE);
 				children.add(part);
 				editorArea.setSelectedElement(part);
@@ -64,50 +68,6 @@ public class EditHandler {
 		} else {
 			editorArea.setSelectedElement(partMatchingInput);
 		}
-	}
-
-	protected MPart findPartWithMatchingInput(final Object selection,
-			final List<MStackElement> children) {
-		MPart partMatchingInput = null;
-		if (selection != null) {
-			for (final MStackElement mStackElement : children) {
-				if (mStackElement instanceof MPart) {
-					final Object input = getInput((MPart) mStackElement);
-
-					if (input != null && mStackElement.isVisible()
-							&& input.equals(selection)) {
-						partMatchingInput = (MPart) mStackElement;
-					}
-				}
-			}
-		}
-		return partMatchingInput;
-	}
-
-	protected Object getInput(final MPart mStackElement) {
-		final Object partInstance = mStackElement.getObject();
-		Object result;
-		if (partInstance instanceof PartWithInput) {
-			result = ((PartWithInput) partInstance).getInput();
-		} else {
-			result = null;
-		}
-		return result;
-	}
-
-	protected void setInput(final MPart part, final Object selection) {
-		final Object partInstance = part.getObject();
-		if (partInstance instanceof PartWithInput) {
-			final Class inputClazz = ((PartWithInput) partInstance)
-					.getInputClass();
-			if (inputClazz.isInstance(selection)) {
-				((PartWithInput) partInstance).setInput(selection);
-			}
-		}
-		part.getContext().modify("input", selection);
-		System.out.println("Set input.");
-		System.out.println("part class " + part.getObject());
-
 	}
 
 	@CanExecute
