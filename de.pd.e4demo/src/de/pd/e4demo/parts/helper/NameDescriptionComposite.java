@@ -1,4 +1,4 @@
-package de.pd.e4demo.parts;
+package de.pd.e4demo.parts.helper;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -7,9 +7,13 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
+import de.pd.e4demo.model.NameDescriptionHolder;
+
 public class NameDescriptionComposite extends Composite {
 	private final Text textName;
 	private final Text textDescription;
+
+	NameDescriptionHolder nameDescriptionHolder;
 
 	/**
 	 * Create the composite.
@@ -38,7 +42,6 @@ public class NameDescriptionComposite extends Composite {
 		textDescription = new Text(this, SWT.BORDER);
 		textDescription.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true,
 				false, 1, 1));
-
 	}
 
 	@Override

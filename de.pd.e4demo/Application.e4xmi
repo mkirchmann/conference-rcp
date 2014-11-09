@@ -45,6 +45,7 @@
     <bindings xmi:id="_RnMKCWcmEeS4BuXKlZq-gQ" keySequence="M1+O" command="_RnMKB2cmEeS4BuXKlZq-gQ"/>
     <bindings xmi:id="_RnMKDGcmEeS4BuXKlZq-gQ" keySequence="M1+S" command="_RnMKCmcmEeS4BuXKlZq-gQ"/>
     <bindings xmi:id="_RnMKD2cmEeS4BuXKlZq-gQ" keySequence="M1+A" command="_RnMKDWcmEeS4BuXKlZq-gQ"/>
+    <bindings xmi:id="_z3KCUGguEeSXcp9WNKKk0A" elementId="" keySequence="ENTER" command="_Nkw28GeVEeS4BuXKlZq-gQ"/>
   </bindingTables>
   <rootContext xmi:id="_RnMKAGcmEeS4BuXKlZq-gQ" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
     <children xmi:id="_RnMKAWcmEeS4BuXKlZq-gQ" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
