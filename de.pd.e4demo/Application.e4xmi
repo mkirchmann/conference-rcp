@@ -19,10 +19,9 @@
     </children>
     <mainMenu xmi:id="_RnMKEGcmEeS4BuXKlZq-gQ" elementId="menu:org.eclipse.ui.main.menu">
       <children xsi:type="menu:Menu" xmi:id="_RnMxEGcmEeS4BuXKlZq-gQ" label="File">
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_RnMxEWcmEeS4BuXKlZq-gQ" label="Open" iconURI="platform:/plugin/de.pd.e4demo/icons/sample.png" command="_RnMKB2cmEeS4BuXKlZq-gQ"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_RnMxEmcmEeS4BuXKlZq-gQ" label="Save" iconURI="platform:/plugin/de.pd.e4demo/icons/save_edit.png" command="_RnMKCmcmEeS4BuXKlZq-gQ"/>
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_RnMxE2cmEeS4BuXKlZq-gQ" label="Quit" command="_RnMKA2cmEeS4BuXKlZq-gQ"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_Fh6TcGeYEeS4BuXKlZq-gQ" elementId="de.pd.e4demo.handledmenuitem.edit" label="Edit" command="_Nkw28GeVEeS4BuXKlZq-gQ"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_RnMxE2cmEeS4BuXKlZq-gQ" label="Quit" command="_RnMKA2cmEeS4BuXKlZq-gQ"/>
       </children>
       <children xsi:type="menu:Menu" xmi:id="_RnMxFGcmEeS4BuXKlZq-gQ" label="Help">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_RnMxFWcmEeS4BuXKlZq-gQ" label="About" command="_RnMKDWcmEeS4BuXKlZq-gQ"/>
@@ -30,19 +29,18 @@
     </mainMenu>
     <trimBars xmi:id="_RnMxG2cmEeS4BuXKlZq-gQ">
       <children xsi:type="menu:ToolBar" xmi:id="_RnMxHGcmEeS4BuXKlZq-gQ" elementId="toolbar:org.eclipse.ui.main.toolbar">
-        <children xsi:type="menu:HandledToolItem" xmi:id="_RnMxHWcmEeS4BuXKlZq-gQ" iconURI="platform:/plugin/de.pd.e4demo/icons/sample.png" command="_RnMKB2cmEeS4BuXKlZq-gQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_RnMxHWcmEeS4BuXKlZq-gQ" iconURI="platform:/plugin/de.pd.e4demo/icons/sample.png"/>
         <children xsi:type="menu:HandledToolItem" xmi:id="_RnMxHmcmEeS4BuXKlZq-gQ" iconURI="platform:/plugin/de.pd.e4demo/icons/save_edit.png" command="_RnMKCmcmEeS4BuXKlZq-gQ"/>
       </children>
     </trimBars>
   </children>
   <handlers xmi:id="_RnMKBGcmEeS4BuXKlZq-gQ" elementId="de.pd.e4demo.handler.quitCommand" contributionURI="bundleclass://de.pd.e4demo/de.pd.e4demo.handlers.QuitHandler" command="_RnMKA2cmEeS4BuXKlZq-gQ"/>
-  <handlers xmi:id="_RnMKCGcmEeS4BuXKlZq-gQ" elementId="de.pd.e4demo.handler.openCommand" contributionURI="bundleclass://de.pd.e4demo/de.pd.e4demo.handlers.OpenHandler" command="_RnMKB2cmEeS4BuXKlZq-gQ"/>
   <handlers xmi:id="_RnMKC2cmEeS4BuXKlZq-gQ" elementId="de.pd.e4demo.handler.saveCommand" contributionURI="bundleclass://de.pd.e4demo/de.pd.e4demo.handlers.SaveHandler" command="_RnMKCmcmEeS4BuXKlZq-gQ"/>
   <handlers xmi:id="_RnMKDmcmEeS4BuXKlZq-gQ" elementId="de.pd.e4demo.handler.aboutCommand" contributionURI="bundleclass://de.pd.e4demo/de.pd.e4demo.handlers.AboutHandler" command="_RnMKDWcmEeS4BuXKlZq-gQ"/>
   <handlers xmi:id="_UePQMGeVEeS4BuXKlZq-gQ" elementId="de.pd.e4demo.handler.edit" contributionURI="bundleclass://de.pd.e4demo/de.pd.e4demo.handlers.EditHandler" command="_Nkw28GeVEeS4BuXKlZq-gQ"/>
   <bindingTables xmi:id="_RnMKBWcmEeS4BuXKlZq-gQ" bindingContext="_RnMKAGcmEeS4BuXKlZq-gQ">
     <bindings xmi:id="_RnMKBmcmEeS4BuXKlZq-gQ" keySequence="M1+Q" command="_RnMKA2cmEeS4BuXKlZq-gQ"/>
-    <bindings xmi:id="_RnMKCWcmEeS4BuXKlZq-gQ" keySequence="M1+O" command="_RnMKB2cmEeS4BuXKlZq-gQ"/>
+    <bindings xmi:id="_RnMKCWcmEeS4BuXKlZq-gQ" keySequence="M1+O"/>
     <bindings xmi:id="_RnMKDGcmEeS4BuXKlZq-gQ" keySequence="M1+S" command="_RnMKCmcmEeS4BuXKlZq-gQ"/>
     <bindings xmi:id="_RnMKD2cmEeS4BuXKlZq-gQ" keySequence="M1+A" command="_RnMKDWcmEeS4BuXKlZq-gQ"/>
     <bindings xmi:id="_z3KCUGguEeSXcp9WNKKk0A" elementId="" keySequence="ENTER" command="_Nkw28GeVEeS4BuXKlZq-gQ"/>
@@ -54,7 +52,6 @@
   <descriptors xmi:id="_ss9HcGgYEeSXcp9WNKKk0A" elementId="de.pd.e4demo.partdescriptor.TalkEditor" label="Talk Editor" allowMultiple="true" closeable="true" dirtyable="true" contributionURI="bundleclass://de.pd.e4demo/de.pd.e4demo.parts.TalkEditor"/>
   <descriptors xmi:id="_40MJkGgZEeSXcp9WNKKk0A" elementId="de.pd.e4demo.partdescriptor.ConferenceEditor" label="Conference Editor" allowMultiple="true" closeable="true" dirtyable="true" contributionURI="bundleclass://de.pd.e4demo/de.pd.e4demo.parts.ConferenceEditor"/>
   <commands xmi:id="_RnMKA2cmEeS4BuXKlZq-gQ" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
-  <commands xmi:id="_RnMKB2cmEeS4BuXKlZq-gQ" elementId="de.pd.e4demo.open" commandName="openCommand"/>
   <commands xmi:id="_RnMKCmcmEeS4BuXKlZq-gQ" elementId="org.eclipse.ui.file.save" commandName="saveCommand"/>
   <commands xmi:id="_RnMKDWcmEeS4BuXKlZq-gQ" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
   <commands xmi:id="_Nkw28GeVEeS4BuXKlZq-gQ" elementId="de.pd.e4demo.command.edit" commandName="editCommand"/>

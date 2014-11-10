@@ -4,6 +4,7 @@ import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 
 public class MPartHelper {
 
+	private static final String INPUT = "input";
 	private final MPart part;
 
 	public MPartHelper(final MPart part) {
@@ -30,7 +31,7 @@ public class MPartHelper {
 			}
 		}
 		if (part != null) {
-			part.getContext().modify("input", selection);
+			part.getContext().modify(INPUT, selection);
 		}
 	}
 }
