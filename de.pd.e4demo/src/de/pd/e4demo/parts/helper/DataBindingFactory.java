@@ -16,8 +16,7 @@ import de.pd.e4demo.model.NameDescriptionHolder;
 public class DataBindingFactory implements ModifyListener {
 	DataBindingContext bindingContext;
 
-	public void createBinding(final NameDescriptionComposite composite,
-			final NameDescriptionHolder model) {
+	public void createBinding(final NameDescriptionComposite composite, final NameDescriptionHolder model) {
 		final DataBindingContext dataBindingContext = getDataBindingContext();
 		final Text textName = composite.getTextName();
 		final Text textDescription = composite.getTextDescription();
@@ -25,21 +24,17 @@ public class DataBindingFactory implements ModifyListener {
 		textName.addModifyListener(this);
 		textDescription.addModifyListener(this);
 		//
-		final ISWTObservableValue<String> observeTextTextNameObserveWidget = WidgetProperties
-				.textText().observe(textName);
-		final IObservableValue<String> nameNameDescriptionHolderObserveValue = PojoProperties
-				.value(NameDescriptionHolder.class,
-						NameDescriptionHolder.PROP_NAME, String.class).observe(
-						model);
-		dataBindingContext.bindValue(observeTextTextNameObserveWidget,
-				nameNameDescriptionHolderObserveValue, null, null);
+		final ISWTObservableValue<String> observeTextTextNameObserveWidget = WidgetProperties.textText().observe(
+				textName);
+		final IObservableValue<String> nameNameDescriptionHolderObserveValue = PojoProperties.value(
+				NameDescriptionHolder.class, NameDescriptionHolder.PROP_NAME, String.class).observe(model);
+		dataBindingContext.bindValue(observeTextTextNameObserveWidget, nameNameDescriptionHolderObserveValue, null,
+				null);
 		//
-		final ISWTObservableValue<String> observeTextTextDescriptionObserveWidget = WidgetProperties
-				.textText().observe(textDescription);
-		final IObservableValue<String> descriptionNameDescriptionHolderObserveValue = PojoProperties
-				.value(NameDescriptionHolder.class,
-						NameDescriptionHolder.PROP_DESCRIPTION, String.class)
-						.observe(model);
+		final ISWTObservableValue<String> observeTextTextDescriptionObserveWidget = WidgetProperties.textText()
+				.observe(textDescription);
+		final IObservableValue<String> descriptionNameDescriptionHolderObserveValue = PojoProperties.value(
+				NameDescriptionHolder.class, NameDescriptionHolder.PROP_DESCRIPTION, String.class).observe(model);
 		dataBindingContext.bindValue(observeTextTextDescriptionObserveWidget,
 				descriptionNameDescriptionHolderObserveValue, null, null);
 		//

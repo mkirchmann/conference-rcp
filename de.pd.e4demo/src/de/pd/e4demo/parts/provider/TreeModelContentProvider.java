@@ -14,8 +14,7 @@ public class TreeModelContentProvider implements ITreeContentProvider {
 	}
 
 	@Override
-	public void inputChanged(final Viewer arg0, final Object arg1,
-			final Object arg2) {
+	public void inputChanged(final Viewer arg0, final Object arg1, final Object arg2) {
 		// TODO Auto-generated method stub
 
 	}

@@ -17,22 +17,27 @@ public class MPartStackHelper {
 		return findPartWithMatchingInput(selection, partStack.getChildren());
 	}
 
-	public MPart findPartWithMatchingInput(final Object selection,
-			final List<MStackElement> children) {
+	public MPart findPartWithMatchingInput(final Object selection, final List<MStackElement> children) {
 		MPart partMatchingInput = null;
 		if (selection != null) {
 			for (final MStackElement mStackElement : children) {
 				if (mStackElement instanceof MPart) {
-					final Object input = new MPartHelper((MPart) mStackElement)
-							.getInput();
+					final Object input = createPartHelper(mStackElement).getInput();
 
-					if (input != null && mStackElement.isVisible()
-							&& input.equals(selection)) {
+					if (input != null && mStackElement.isVisible() && input.equals(selection)) {
 						partMatchingInput = (MPart) mStackElement;
 					}
 				}
 			}
 		}
 		return partMatchingInput;
+	}
+
+	private MPartHelper createPartHelper(final MStackElement mStackElement) {
+		return new MPartHelper((MPart) mStackElement);
+	}
+
+	public MPartStack getPartStack() {
+		return partStack;
 	}
 }

@@ -14,8 +14,7 @@ public class CustomPropertyChangeSupport {
 		this.source = source;
 	}
 
-	public PropertyChangeEvent createEvent(final String key,
-			final Object oldValue, final Object newValue) {
+	public PropertyChangeEvent createEvent(final String key, final Object oldValue, final Object newValue) {
 		return new PropertyChangeEvent(source, key, oldValue, newValue);
 	}
 
@@ -23,8 +22,7 @@ public class CustomPropertyChangeSupport {
 		support.addPropertyChangeListener(arg0);
 	}
 
-	public void addPropertyChangeListener(final String arg0,
-			final PropertyChangeListener arg1) {
+	public void addPropertyChangeListener(final String arg0, final PropertyChangeListener arg1) {
 		support.addPropertyChangeListener(arg0, arg1);
 	}
 
@@ -32,8 +30,7 @@ public class CustomPropertyChangeSupport {
 		support.firePropertyChange(arg0);
 	}
 
-	public void firePropertyChange(final String arg0, final int arg1,
-			final int arg2) {
+	public void firePropertyChange(final String arg0, final int arg1, final int arg2) {
 		support.firePropertyChange(arg0, arg1, arg2);
 	}
 
@@ -41,8 +38,7 @@ public class CustomPropertyChangeSupport {
 		support.removePropertyChangeListener(arg0);
 	}
 
-	public void removePropertyChangeListener(final String arg0,
-			final PropertyChangeListener arg1) {
+	public void removePropertyChangeListener(final String arg0, final PropertyChangeListener arg1) {
 		support.removePropertyChangeListener(arg0, arg1);
 	}
 

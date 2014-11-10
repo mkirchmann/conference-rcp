@@ -3,8 +3,7 @@ package de.pd.e4demo.model;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
-public class TalkClientModel implements NameDescriptionHolder,
-PropertyChangeEnabled {
+public class TalkClientModel implements NameDescriptionHolder, PropertyChangeEnabled {
 	private String name;
 	private String description;
 
@@ -12,15 +11,13 @@ PropertyChangeEnabled {
 
 	private final ConferenceClientModel conferenceClientModel;
 
-	private final CustomPropertyChangeSupport support = new CustomPropertyChangeSupport(
-			this);
+	private final CustomPropertyChangeSupport support = new CustomPropertyChangeSupport(this);
 
 	public TalkClientModel(final ConferenceClientModel conference) {
 		this(null, null, conference);
 	}
 
-	public TalkClientModel(final String name, final String description,
-			final ConferenceClientModel conference) {
+	public TalkClientModel(final String name, final String description, final ConferenceClientModel conference) {
 		this.name = name;
 		this.description = description;
 		this.conferenceClientModel = conference;
@@ -33,8 +30,7 @@ PropertyChangeEnabled {
 
 	@Override
 	public void setName(final String name) {
-		final PropertyChangeEvent event = support.createEvent(PROP_NAME,
-				this.name, name);
+		final PropertyChangeEvent event = support.createEvent(PROP_NAME, this.name, name);
 		this.name = name;
 		support.firePropertyChange(event);
 	}
@@ -46,8 +42,7 @@ PropertyChangeEnabled {
 
 	@Override
 	public void setDescription(final String description) {
-		final PropertyChangeEvent event = support.createEvent(PROP_DESCRIPTION,
-				this.description, description);
+		final PropertyChangeEvent event = support.createEvent(PROP_DESCRIPTION, this.description, description);
 		this.description = description;
 		support.firePropertyChange(event);
 	}

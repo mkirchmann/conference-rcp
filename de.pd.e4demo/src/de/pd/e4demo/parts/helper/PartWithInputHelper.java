@@ -1,6 +1,5 @@
 package de.pd.e4demo.parts.helper;
 
-
 public class PartWithInputHelper<T> implements PartWithInput<T> {
 	private final Class<T> inputClass;
 

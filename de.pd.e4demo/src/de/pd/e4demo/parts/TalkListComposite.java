@@ -35,29 +35,23 @@ public class TalkListComposite extends Composite {
 		setLayout(new GridLayout(1, false));
 
 		final Composite composite = new Composite(this, SWT.NONE);
-		composite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1,
-				1));
+		composite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
 		final TableColumnLayout tcl_composite = new TableColumnLayout();
 		composite.setLayout(tcl_composite);
 
-		tableViewer = new TableViewer(composite, SWT.BORDER
-				| SWT.FULL_SELECTION);
+		tableViewer = new TableViewer(composite, SWT.BORDER | SWT.FULL_SELECTION);
 		table = tableViewer.getTable();
 		table.setHeaderVisible(true);
 		table.setLinesVisible(true);
 
-		final TableViewerColumn tableViewerColumn = new TableViewerColumn(
-				tableViewer, SWT.NONE);
+		final TableViewerColumn tableViewerColumn = new TableViewerColumn(tableViewer, SWT.NONE);
 		final TableColumn tblclmnTitle = tableViewerColumn.getColumn();
-		tcl_composite.setColumnData(tblclmnTitle, new ColumnPixelData(150,
-				true, true));
+		tcl_composite.setColumnData(tblclmnTitle, new ColumnPixelData(150, true, true));
 		tblclmnTitle.setText("Title");
 
-		final TableViewerColumn tableViewerColumn_1 = new TableViewerColumn(
-				tableViewer, SWT.NONE);
+		final TableViewerColumn tableViewerColumn_1 = new TableViewerColumn(tableViewer, SWT.NONE);
 		final TableColumn tblclmnDescription = tableViewerColumn_1.getColumn();
-		tcl_composite.setColumnData(tblclmnDescription, new ColumnPixelData(
-				150, true, true));
+		tcl_composite.setColumnData(tblclmnDescription, new ColumnPixelData(150, true, true));
 		tblclmnDescription.setText("Description");
 
 	}
@@ -71,8 +65,7 @@ public class TalkListComposite extends Composite {
 		tableViewer.setLabelProvider(labelProvider);
 	}
 
-	public void addSelectionChangedListener(
-			final ISelectionChangedListener listener) {
+	public void addSelectionChangedListener(final ISelectionChangedListener listener) {
 		tableViewer.addSelectionChangedListener(listener);
 	}
 

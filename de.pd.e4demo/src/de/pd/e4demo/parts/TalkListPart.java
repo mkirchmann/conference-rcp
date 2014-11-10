@@ -37,14 +37,11 @@ public class TalkListPart {
 		talkListComposite = new TalkListComposite(parent, SWT.NONE);
 		talkListComposite.setLabelProvider(new ConferenceLabelProvider());
 		talkListComposite.setContentProvider(new ContentProvider());
-		talkListComposite
-		.addSelectionChangedListener(new DefaultSelectionListener(
-				selectionService));
+		talkListComposite.addSelectionChangedListener(new DefaultSelectionListener(selectionService));
 	}
 
 	@Inject
-	void setSelection(
-			@Optional @Named(IServiceConstants.ACTIVE_SELECTION) final ConferenceClientModel conference) {
+	void setSelection(@Optional @Named(IServiceConstants.ACTIVE_SELECTION) final ConferenceClientModel conference) {
 		Collection<TalkClientModel> result;
 		System.out.println("Selection Changed to " + conference);
 		if (conference != null) {
@@ -67,8 +64,7 @@ public class TalkListPart {
 
 	@Inject
 	@Optional
-	public void refresh(
-			@UIEventTopic(TalkClientModel.TOPIC) final TalkClientModel talk) {
+	public void refresh(@UIEventTopic(TalkClientModel.TOPIC) final TalkClientModel talk) {
 		talkListComposite.refresh(talk);
 	}
 

@@ -6,13 +6,14 @@ import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 
-public final class DefaultSelectionListener implements
-		ISelectionChangedListener {
+public final class DefaultSelectionListener implements ISelectionChangedListener {
 	ESelectionService selectionService;
+
 	public DefaultSelectionListener(ESelectionService selectionService) {
 		this.selectionService = selectionService;
 
 	}
+
 	@Override
 	public void selectionChanged(SelectionChangedEvent event) {
 		ISelection selection = event.getSelection();

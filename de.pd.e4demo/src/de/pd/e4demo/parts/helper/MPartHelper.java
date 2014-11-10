@@ -24,8 +24,7 @@ public class MPartHelper {
 	public void setInput(final Object selection) {
 		final Object partInstance = part.getObject();
 		if (partInstance instanceof PartWithInput) {
-			final Class inputClazz = ((PartWithInput) partInstance)
-					.getInputClass();
+			final Class inputClazz = ((PartWithInput) partInstance).getInputClass();
 			if (inputClazz.isInstance(selection)) {
 				((PartWithInput) partInstance).setInput(selection);
 			}

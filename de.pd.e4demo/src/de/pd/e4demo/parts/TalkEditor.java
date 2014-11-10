@@ -21,8 +21,7 @@ import de.pd.e4demo.parts.helper.NameDescriptionComposite;
 import de.pd.e4demo.parts.helper.PartWithInput;
 import de.pd.e4demo.parts.helper.PartWithInputHelper;
 
-public class TalkEditor implements PartWithInput<TalkClientModel>,
-		PropertyChangeListener {
+public class TalkEditor implements PartWithInput<TalkClientModel>, PropertyChangeListener {
 
 	final PartWithInputHelper<TalkClientModel> partWithInputHelper;
 
@@ -48,8 +47,7 @@ public class TalkEditor implements PartWithInput<TalkClientModel>,
 	}
 
 	@Inject
-	public TalkEditor(
-			final PartWithInputHelper<TalkClientModel> partWithInputHelper) {
+	public TalkEditor(final PartWithInputHelper<TalkClientModel> partWithInputHelper) {
 		this.partWithInputHelper = partWithInputHelper;
 	}
 
@@ -57,8 +55,7 @@ public class TalkEditor implements PartWithInput<TalkClientModel>,
 	public void postConstruct(final Composite parent) {
 		showInput();
 
-		nameDescriptionComposite = new NameDescriptionComposite(parent,
-				SWT.NONE);
+		nameDescriptionComposite = new NameDescriptionComposite(parent, SWT.NONE);
 	}
 
 	@PreDestroy

@@ -58,27 +58,20 @@ public class ConferenceListPart {
 		composite.setContentProvider(new TreeModelContentProvider());
 		composite.setLabelProvider(new ConferenceLabelProvider());
 		composite.setInput(createConference());
-		composite.addSelectionChangedListener(new DefaultSelectionListener(
-				selectionService));
+		composite.addSelectionChangedListener(new DefaultSelectionListener(selectionService));
 	}
 
 	private Object createConference() {
 		final List<TalkClientModel> list1 = new ArrayList<TalkClientModel>();
-		final ConferenceClientModel conference1 = new ConferenceClientModel(
-				"Super Conference", list1);
-		conference1.addChild(new TalkClientModel("Sweet Talk 1", "Talk",
-				conference1));
-		conference1.addChild(new TalkClientModel("Sweet Talk 2", "Talk",
-				conference1));
-		conference1
-				.addChild(new TalkClientModel("Talk 3", "Talk", conference1));
+		final ConferenceClientModel conference1 = new ConferenceClientModel("Super Conference", list1);
+		conference1.addChild(new TalkClientModel("Sweet Talk 1", "Talk", conference1));
+		conference1.addChild(new TalkClientModel("Sweet Talk 2", "Talk", conference1));
+		conference1.addChild(new TalkClientModel("Talk 3", "Talk", conference1));
 
 		final List<TalkClientModel> list2 = new ArrayList<TalkClientModel>();
 
-		final ConferenceClientModel conference2 = new ConferenceClientModel(
-				"Mega Conf 2014", list2);
-		conference2.addChild(new TalkClientModel(
-				"Stock Options and Futures Risks", "Risks of stock options",
+		final ConferenceClientModel conference2 = new ConferenceClientModel("Mega Conf 2014", list2);
+		conference2.addChild(new TalkClientModel("Stock Options and Futures Risks", "Risks of stock options",
 				conference1));
 
 		return new Object[] { conference1, conference2 };
@@ -96,8 +89,7 @@ public class ConferenceListPart {
 
 	@Inject
 	@Optional
-	public void refresh(
-			@UIEventTopic(TalkClientModel.TOPIC) final TalkClientModel talk) {
+	public void refresh(@UIEventTopic(TalkClientModel.TOPIC) final TalkClientModel talk) {
 		composite.refresh(talk);
 	}
 }

@@ -38,8 +38,7 @@ public class ConferenceListComposite extends Composite {
 		text.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 		text.setMessage("Enter text to mark part as dirty");
 		final Composite composite = new Composite(this, SWT.NONE);
-		composite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1,
-				1));
+		composite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
 		final TreeColumnLayout tcl_composite = new TreeColumnLayout();
 		composite.setLayout(tcl_composite);
 
@@ -48,18 +47,14 @@ public class ConferenceListComposite extends Composite {
 		tree.setHeaderVisible(true);
 		tree.setLinesVisible(true);
 
-		final TreeViewerColumn treeViewerColumn = new TreeViewerColumn(
-				treeViewer, SWT.NONE);
+		final TreeViewerColumn treeViewerColumn = new TreeViewerColumn(treeViewer, SWT.NONE);
 		final TreeColumn trclmnTitle = treeViewerColumn.getColumn();
-		tcl_composite.setColumnData(trclmnTitle, new ColumnPixelData(150, true,
-				true));
+		tcl_composite.setColumnData(trclmnTitle, new ColumnPixelData(150, true, true));
 		trclmnTitle.setText("Title");
 
-		final TreeViewerColumn treeViewerColumn_1 = new TreeViewerColumn(
-				treeViewer, SWT.NONE);
+		final TreeViewerColumn treeViewerColumn_1 = new TreeViewerColumn(treeViewer, SWT.NONE);
 		final TreeColumn trclmnDescription = treeViewerColumn_1.getColumn();
-		tcl_composite.setColumnData(trclmnDescription, new ColumnPixelData(150,
-				true, true));
+		tcl_composite.setColumnData(trclmnDescription, new ColumnPixelData(150, true, true));
 		trclmnDescription.setText("Description");
 
 	}
@@ -69,8 +64,7 @@ public class ConferenceListComposite extends Composite {
 		// Disable the check that prevents subclassing of SWT components
 	}
 
-	public void addSelectionChangedListener(
-			final ISelectionChangedListener listener) {
+	public void addSelectionChangedListener(final ISelectionChangedListener listener) {
 		treeViewer.addSelectionChangedListener(listener);
 	}
 

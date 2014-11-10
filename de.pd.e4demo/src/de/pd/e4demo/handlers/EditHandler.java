@@ -44,13 +44,10 @@ public class EditHandler {
 		System.out.println(selection);
 		String id;
 		final MPart part;
-		final MPartStack editorArea = (MPartStack) modelService.find(
-				"de.pd.e4demo.partstack.editorarea", application);
-		final MPartStackHelper partStackHelper = new MPartStackHelper(
-				editorArea);
+		final MPartStack editorArea = findEditorArea();
+		final MPartStackHelper partStackHelper = createPartStackHelper(editorArea);
 		final List<MStackElement> children = editorArea.getChildren();
-		final MPart partMatchingInput = partStackHelper
-				.findPartWithMatchingInput(selection);
+		final MPart partMatchingInput = partStackHelper.findPartWithMatchingInput(selection);
 		if (partMatchingInput == null) {
 			if (selection instanceof ConferenceClientModel) {
 				id = ConferenceEditor.ID;
@@ -73,6 +70,15 @@ public class EditHandler {
 		} else {
 			editorArea.setSelectedElement(partMatchingInput);
 		}
+	}
+
+	private MPartStack findEditorArea() {
+		final MPartStack editorArea = (MPartStack) modelService.find("de.pd.e4demo.partstack.editorarea", application);
+		return editorArea;
+	}
+
+	private MPartStackHelper createPartStackHelper(final MPartStack editorArea) {
+		return new MPartStackHelper(editorArea);
 	}
 
 	@CanExecute
