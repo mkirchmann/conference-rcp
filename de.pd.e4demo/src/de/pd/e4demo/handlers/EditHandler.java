@@ -4,8 +4,10 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.eclipse.e4.core.contexts.Active;
 import org.eclipse.e4.core.di.annotations.CanExecute;
 import org.eclipse.e4.core.di.annotations.Execute;
+import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.eclipse.e4.ui.model.application.ui.basic.MPartStack;
@@ -37,7 +39,7 @@ public class EditHandler {
 	MApplication application;
 
 	@Execute
-	public void execute() {
+	public void execute(@Active @Optional final MPart activePart) {
 		final Object selection = selectionService.getSelection();
 		System.out.println(selection);
 		String id;
@@ -61,9 +63,12 @@ public class EditHandler {
 				part = partService.createPart(id);
 				partService.showPart(part, PartState.CREATE);
 				new MPartHelper(part).setInput(selection);
-				partService.showPart(part, PartState.ACTIVATE);
 				children.add(part);
+				partService.showPart(part, PartState.ACTIVATE);
 				editorArea.setSelectedElement(part);
+				if (activePart != null) {
+					activePart.getParent().setSelectedElement(activePart);
+				}
 			}
 		} else {
 			editorArea.setSelectedElement(partMatchingInput);

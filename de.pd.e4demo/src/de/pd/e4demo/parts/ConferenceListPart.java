@@ -17,8 +17,10 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.di.Persist;
+import org.eclipse.e4.ui.di.UIEventTopic;
 import org.eclipse.e4.ui.model.application.ui.MDirtyable;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.swt.SWT;
@@ -69,7 +71,7 @@ public class ConferenceListPart {
 		conference1.addChild(new TalkClientModel("Sweet Talk 2", "Talk",
 				conference1));
 		conference1
-		.addChild(new TalkClientModel("Talk 3", "Talk", conference1));
+				.addChild(new TalkClientModel("Talk 3", "Talk", conference1));
 
 		final List<TalkClientModel> list2 = new ArrayList<TalkClientModel>();
 
@@ -90,5 +92,12 @@ public class ConferenceListPart {
 	@Persist
 	public void save() {
 		dirty.setDirty(false);
+	}
+
+	@Inject
+	@Optional
+	public void refresh(
+			@UIEventTopic(TalkClientModel.TOPIC) final TalkClientModel talk) {
+		composite.refresh(talk);
 	}
 }

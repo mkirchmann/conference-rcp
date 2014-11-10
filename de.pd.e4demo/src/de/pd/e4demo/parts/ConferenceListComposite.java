@@ -16,6 +16,9 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeColumn;
 
+import de.pd.e4demo.model.ConferenceClientModel;
+import de.pd.e4demo.model.TalkClientModel;
+
 public class ConferenceListComposite extends Composite {
 
 	private final TreeViewer treeViewer;
@@ -91,4 +94,11 @@ public class ConferenceListComposite extends Composite {
 		text.addModifyListener(listener);
 	}
 
+	public void refresh(final TalkClientModel talk) {
+		treeViewer.refresh(talk);
+	}
+
+	public void refresh(final ConferenceClientModel conference) {
+		treeViewer.refresh(conference);
+	}
 }

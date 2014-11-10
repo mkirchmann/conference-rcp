@@ -9,6 +9,7 @@ import javax.inject.Named;
 
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.di.UIEventTopic;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.swt.SWT;
@@ -37,8 +38,8 @@ public class TalkListPart {
 		talkListComposite.setLabelProvider(new ConferenceLabelProvider());
 		talkListComposite.setContentProvider(new ContentProvider());
 		talkListComposite
-				.addSelectionChangedListener(new DefaultSelectionListener(
-						selectionService));
+		.addSelectionChangedListener(new DefaultSelectionListener(
+				selectionService));
 	}
 
 	@Inject
@@ -62,6 +63,13 @@ public class TalkListPart {
 	@Focus
 	public void onFocus() {
 
+	}
+
+	@Inject
+	@Optional
+	public void refresh(
+			@UIEventTopic(TalkClientModel.TOPIC) final TalkClientModel talk) {
+		talkListComposite.refresh(talk);
 	}
 
 }

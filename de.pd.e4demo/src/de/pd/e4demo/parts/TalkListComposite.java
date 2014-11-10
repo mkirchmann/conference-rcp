@@ -14,6 +14,8 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 
+import de.pd.e4demo.model.TalkClientModel;
+
 public class TalkListComposite extends Composite {
 	private final Table table;
 	private final TableViewer tableViewer;
@@ -24,7 +26,7 @@ public class TalkListComposite extends Composite {
 
 	/**
 	 * Create the composite.
-	 * 
+	 *
 	 * @param parent
 	 * @param style
 	 */
@@ -80,5 +82,9 @@ public class TalkListComposite extends Composite {
 
 	public TableViewer getTableViewer() {
 		return tableViewer;
+	}
+
+	public void refresh(final TalkClientModel talk) {
+		tableViewer.refresh(talk);
 	}
 }

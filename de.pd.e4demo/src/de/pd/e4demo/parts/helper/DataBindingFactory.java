@@ -6,12 +6,14 @@ import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.e4.core.di.annotations.Creatable;
 import org.eclipse.jface.databinding.swt.ISWTObservableValue;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
+import org.eclipse.swt.events.ModifyEvent;
+import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.widgets.Text;
 
 import de.pd.e4demo.model.NameDescriptionHolder;
 
 @Creatable
-public class DataBindingFactory {
+public class DataBindingFactory implements ModifyListener {
 	DataBindingContext bindingContext;
 
 	public void createBinding(final NameDescriptionComposite composite,
@@ -19,6 +21,9 @@ public class DataBindingFactory {
 		final DataBindingContext dataBindingContext = getDataBindingContext();
 		final Text textName = composite.getTextName();
 		final Text textDescription = composite.getTextDescription();
+
+		textName.addModifyListener(this);
+		textDescription.addModifyListener(this);
 		//
 		final ISWTObservableValue<String> observeTextTextNameObserveWidget = WidgetProperties
 				.textText().observe(textName);
@@ -49,5 +54,10 @@ public class DataBindingFactory {
 
 	public void refreshUi() {
 		getDataBindingContext().updateTargets();
+	}
+
+	@Override
+	public void modifyText(final ModifyEvent arg0) {
+		getDataBindingContext().updateModels();
 	}
 }
