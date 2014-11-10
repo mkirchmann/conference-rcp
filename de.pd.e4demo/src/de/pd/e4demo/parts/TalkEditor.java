@@ -53,8 +53,6 @@ public class TalkEditor implements PartWithInput<TalkClientModel>, PropertyChang
 
 	@PostConstruct
 	public void postConstruct(final Composite parent) {
-		showInput();
-
 		nameDescriptionComposite = new NameDescriptionComposite(parent, SWT.NONE);
 	}
 
@@ -65,13 +63,7 @@ public class TalkEditor implements PartWithInput<TalkClientModel>, PropertyChang
 
 	@Focus
 	public void onFocus() {
-		showInput();
-	}
-
-	private void showInput() {
-		final Object object = context.getContext().get("input");
-
-		System.out.println("in editor: " + object);
+		nameDescriptionComposite.setFocus();
 	}
 
 	@Persist

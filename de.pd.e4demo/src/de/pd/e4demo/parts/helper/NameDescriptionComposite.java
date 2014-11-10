@@ -53,4 +53,9 @@ public class NameDescriptionComposite extends Composite {
 		return textDescription;
 	}
 
+	@Override
+	public boolean setFocus() {
+		return textName.setFocus();
+	}
+
 }

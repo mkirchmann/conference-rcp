@@ -41,7 +41,6 @@ public class EditHandler {
 	@Execute
 	public void execute(@Active @Optional final MPart activePart) {
 		final Object selection = selectionService.getSelection();
-		System.out.println(selection);
 		String id;
 		final MPart part;
 		final MPartStack editorArea = findEditorArea();
@@ -59,7 +58,7 @@ public class EditHandler {
 			if (id != null) {
 				part = partService.createPart(id);
 				partService.showPart(part, PartState.CREATE);
-				new MPartHelper(part).setInput(selection);
+				createPartHelper(part).setInput(selection);
 				children.add(part);
 				partService.showPart(part, PartState.ACTIVATE);
 				editorArea.setSelectedElement(part);
@@ -72,12 +71,16 @@ public class EditHandler {
 		}
 	}
 
-	private MPartStack findEditorArea() {
+	protected MPartHelper createPartHelper(final MPart part) {
+		return new MPartHelper(part);
+	}
+
+	protected MPartStack findEditorArea() {
 		final MPartStack editorArea = (MPartStack) modelService.find("de.pd.e4demo.partstack.editorarea", application);
 		return editorArea;
 	}
 
-	private MPartStackHelper createPartStackHelper(final MPartStack editorArea) {
+	protected MPartStackHelper createPartStackHelper(final MPartStack editorArea) {
 		return new MPartStackHelper(editorArea);
 	}
 

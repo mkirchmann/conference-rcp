@@ -31,8 +31,6 @@ public class MPartHelper {
 		}
 		if (part != null) {
 			part.getContext().modify("input", selection);
-			System.out.println("Set input.");
-			System.out.println("part class " + part.getObject());
 		}
 	}
 }

@@ -43,7 +43,6 @@ public class TalkListPart {
 	@Inject
 	void setSelection(@Optional @Named(IServiceConstants.ACTIVE_SELECTION) final ConferenceClientModel conference) {
 		Collection<TalkClientModel> result;
-		System.out.println("Selection Changed to " + conference);
 		if (conference != null) {
 			result = conference.getChildren();
 			if (talkListComposite != null) {
