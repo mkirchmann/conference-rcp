@@ -27,6 +27,11 @@ public class MPartStackHelperTest {
 	}
 
 	@Test
+	public void testGet() {
+		Assertions.assertThat(helper.getPartStack()).isSameAs(partStack);
+	}
+
+	@Test
 	public void testFindPartWithMatchingInput_NullInput() throws Exception {
 		final MPart part = helper.findPartWithMatchingInput(null);
 		Assertions.assertThat(part).isSameAs(null);

@@ -10,16 +10,15 @@ import javax.inject.Inject;
 import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.di.Persist;
-import org.eclipse.e4.ui.model.application.ui.MContext;
 import org.eclipse.e4.ui.model.application.ui.MDirtyable;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 
 import de.pd.e4demo.model.TalkClientModel;
-import de.pd.e4demo.parts.helper.DataBindingFactory;
-import de.pd.e4demo.parts.helper.NameDescriptionComposite;
 import de.pd.e4demo.parts.helper.PartWithInput;
 import de.pd.e4demo.parts.helper.PartWithInputHelper;
+import de.pd.e4demo.parts.helper.ui.DataBindingFactory;
+import de.pd.e4demo.parts.helper.ui.NameDescriptionComposite;
 
 public class TalkEditor implements PartWithInput<TalkClientModel>, PropertyChangeListener {
 
@@ -28,10 +27,7 @@ public class TalkEditor implements PartWithInput<TalkClientModel>, PropertyChang
 	public static final String ID = "de.pd.e4demo.partdescriptor.TalkEditor";
 
 	@Inject
-	private MContext context;
-
-	@Inject
-	private DataBindingFactory dataBindingFactory;
+	DataBindingFactory dataBindingFactory;
 
 	@Inject
 	IEventBroker eventBroker;
@@ -53,7 +49,11 @@ public class TalkEditor implements PartWithInput<TalkClientModel>, PropertyChang
 
 	@PostConstruct
 	public void postConstruct(final Composite parent) {
-		nameDescriptionComposite = new NameDescriptionComposite(parent, SWT.NONE);
+		nameDescriptionComposite = createComposite(parent);
+	}
+
+	protected NameDescriptionComposite createComposite(final Composite parent) {
+		return new NameDescriptionComposite(parent, SWT.NONE);
 	}
 
 	@PreDestroy

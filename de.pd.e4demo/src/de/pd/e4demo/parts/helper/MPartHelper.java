@@ -30,8 +30,6 @@ public class MPartHelper {
 				((PartWithInput) partInstance).setInput(selection);
 			}
 		}
-		if (part != null) {
-			part.getContext().modify(INPUT, selection);
-		}
+		part.getContext().modify(INPUT, selection);
 	}
 }

@@ -8,3 +8,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ClassPath: lib/assertj-core-1.7.0.jar,
  lib/mockito-all-1.9.5.jar,
  .
+Require-Bundle: org.eclipse.osgi.services;bundle-version="3.4.0"

@@ -33,6 +33,7 @@ import de.pd.e4demo.model.TalkClientModel;
 import de.pd.e4demo.parts.helper.DefaultSelectionListener;
 import de.pd.e4demo.parts.provider.ConferenceLabelProvider;
 import de.pd.e4demo.parts.provider.TreeModelContentProvider;
+import de.pd.e4demo.parts.ui.ConferenceListComposite;
 
 public class ConferenceListPart {
 

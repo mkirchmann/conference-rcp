@@ -26,6 +26,8 @@ import de.pd.e4demo.parts.helper.MPartStackHelper;
 
 public class EditHandler {
 
+	private static final String ID_EDITORAREA = "de.pd.e4demo.partstack.editorarea";
+
 	@Inject
 	EPartService partService;
 
@@ -76,7 +78,7 @@ public class EditHandler {
 	}
 
 	protected MPartStack findEditorArea() {
-		final MPartStack editorArea = (MPartStack) modelService.find("de.pd.e4demo.partstack.editorarea", application);
+		final MPartStack editorArea = (MPartStack) modelService.find(ID_EDITORAREA, application);
 		return editorArea;
 	}
 

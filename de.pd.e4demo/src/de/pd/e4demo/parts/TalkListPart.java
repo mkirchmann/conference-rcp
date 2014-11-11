@@ -20,6 +20,7 @@ import de.pd.e4demo.model.TalkClientModel;
 import de.pd.e4demo.parts.helper.DefaultSelectionListener;
 import de.pd.e4demo.parts.provider.ConferenceLabelProvider;
 import de.pd.e4demo.parts.provider.ContentProvider;
+import de.pd.e4demo.parts.ui.TalkListComposite;
 
 public class TalkListPart {
 

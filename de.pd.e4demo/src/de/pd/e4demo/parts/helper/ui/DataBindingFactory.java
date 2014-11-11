@@ -1,4 +1,4 @@
-package de.pd.e4demo.parts.helper;
+package de.pd.e4demo.parts.helper.ui;
 
 import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.beans.PojoProperties;

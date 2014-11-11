@@ -1,4 +1,4 @@
-package de.pd.e4demo.parts;
+package de.pd.e4demo.parts.ui;
 
 import org.eclipse.jface.layout.TreeColumnLayout;
 import org.eclipse.jface.viewers.ColumnPixelData;

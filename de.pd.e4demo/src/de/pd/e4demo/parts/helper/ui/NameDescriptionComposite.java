@@ -1,4 +1,4 @@
-package de.pd.e4demo.parts.helper;
+package de.pd.e4demo.parts.helper.ui;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
