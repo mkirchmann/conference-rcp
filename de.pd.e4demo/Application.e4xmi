@@ -6,7 +6,7 @@
         <children xsi:type="basic:PartSashContainer" xmi:id="_EBCd8GeVEeS4BuXKlZq-gQ" elementId="de.pd.e4demo.partsashcontainer.0">
           <children xsi:type="basic:PartSashContainer" xmi:id="_RnMxGGcmEeS4BuXKlZq-gQ" horizontal="true">
             <children xsi:type="basic:PartStack" xmi:id="_RnMxGWcmEeS4BuXKlZq-gQ" elementId="de.pd.e4demo.partstack.navigation">
-              <children xsi:type="basic:Part" xmi:id="_RnMxGmcmEeS4BuXKlZq-gQ" contributionURI="bundleclass://de.pd.e4demo/de.pd.e4demo.parts.ConferenceListPart" label="Sample Part"/>
+              <children xsi:type="basic:Part" xmi:id="_RnMxGmcmEeS4BuXKlZq-gQ" contributionURI="bundleclass://de.pd.e4demo/de.pd.e4demo.parts.ConferenceListPart" label="Conference List"/>
             </children>
             <children xsi:type="basic:PartStack" xmi:id="_a-kJEGcmEeS4BuXKlZq-gQ" elementId="de.pd.e4demo.partstack.editorarea"/>
           </children>
