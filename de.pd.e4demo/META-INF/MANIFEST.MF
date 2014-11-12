@@ -21,6 +21,8 @@ Require-Bundle: javax.inject;bundle-version="1.0.0";visibility:=reexport,
  org.eclipse.core.databinding.property;visibility:=reexport,
  org.eclipse.jface.databinding;visibility:=reexport,
  org.eclipse.osgi.services;visibility:=reexport,
+ org.eclipse.emf;visibility:=reexport,
+ org.eclipse.emf.common;visibility:=reexport,
  com.ibm.icu;visibility:=reexport,
  org.eclipse.e4.core.services;bundle-version="1.2.1";visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7

@@ -26,7 +26,7 @@ import de.pd.e4demo.parts.helper.MPartStackHelper;
 
 public class EditHandler {
 
-	private static final String ID_EDITORAREA = "de.pd.e4demo.partstack.editorarea";
+	static final String ID_EDITORAREA = "de.pd.e4demo.partstack.editorarea";
 
 	@Inject
 	EPartService partService;
@@ -43,20 +43,13 @@ public class EditHandler {
 	@Execute
 	public void execute(@Active @Optional final MPart activePart) {
 		final Object selection = selectionService.getSelection();
-		String id;
 		final MPart part;
 		final MPartStack editorArea = findEditorArea();
 		final MPartStackHelper partStackHelper = createPartStackHelper(editorArea);
-		final List<MStackElement> children = editorArea.getChildren();
 		final MPart partMatchingInput = partStackHelper.findPartWithMatchingInput(selection);
 		if (partMatchingInput == null) {
-			if (selection instanceof ConferenceClientModel) {
-				id = ConferenceEditor.ID;
-			} else if (selection instanceof TalkClientModel) {
-				id = TalkEditor.ID;
-			} else {
-				id = null;
-			}
+			final List<MStackElement> children = editorArea.getChildren();
+			final String id = getIdBySelection(selection);
 			if (id != null) {
 				part = partService.createPart(id);
 				partService.showPart(part, PartState.CREATE);
@@ -64,13 +57,25 @@ public class EditHandler {
 				children.add(part);
 				partService.showPart(part, PartState.ACTIVATE);
 				editorArea.setSelectedElement(part);
-				if (activePart != null) {
+				if (activePart != null && activePart.getParent() != null) {
 					activePart.getParent().setSelectedElement(activePart);
 				}
 			}
 		} else {
 			editorArea.setSelectedElement(partMatchingInput);
 		}
+	}
+
+	protected String getIdBySelection(final Object selection) {
+		String id;
+		if (selection instanceof ConferenceClientModel) {
+			id = ConferenceEditor.ID;
+		} else if (selection instanceof TalkClientModel) {
+			id = TalkEditor.ID;
+		} else {
+			id = null;
+		}
+		return id;
 	}
 
 	protected MPartHelper createPartHelper(final MPart part) {
