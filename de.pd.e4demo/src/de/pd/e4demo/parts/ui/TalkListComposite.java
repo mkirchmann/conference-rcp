@@ -20,7 +20,7 @@ public class TalkListComposite extends Composite {
 	private final Table table;
 	private final TableViewer tableViewer;
 
-	public final void setInput(final Object input) {
+	public void setInput(final Object input) {
 		tableViewer.setInput(input);
 	}
 
@@ -79,5 +79,10 @@ public class TalkListComposite extends Composite {
 
 	public void refresh(final TalkClientModel talk) {
 		tableViewer.refresh(talk);
+	}
+
+	@Override
+	public boolean setFocus() {
+		return tableViewer.getTable().setFocus();
 	}
 }

@@ -35,10 +35,14 @@ public class TalkListPart {
 
 	@PostConstruct
 	public void postConstruct(final Composite parent) {
-		talkListComposite = new TalkListComposite(parent, SWT.NONE);
+		talkListComposite = createComposite(parent);
 		talkListComposite.setLabelProvider(new ConferenceLabelProvider());
 		talkListComposite.setContentProvider(new ContentProvider());
 		talkListComposite.addSelectionChangedListener(new DefaultSelectionListener(selectionService));
+	}
+
+	protected TalkListComposite createComposite(final Composite parent) {
+		return new TalkListComposite(parent, SWT.NONE);
 	}
 
 	@Inject
@@ -59,7 +63,7 @@ public class TalkListPart {
 
 	@Focus
 	public void onFocus() {
-
+		talkListComposite.setFocus();
 	}
 
 	@Inject

@@ -8,11 +8,9 @@ import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.TreeViewerColumn;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeColumn;
 
@@ -22,7 +20,6 @@ import de.pd.e4demo.model.TalkClientModel;
 public class ConferenceListComposite extends Composite {
 
 	private final TreeViewer treeViewer;
-	private final Text text;
 
 	/**
 	 * Create the composite.
@@ -34,9 +31,6 @@ public class ConferenceListComposite extends Composite {
 		super(parent, style);
 		setLayout(new GridLayout(1, false));
 
-		text = new Text(this, SWT.BORDER);
-		text.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
-		text.setMessage("Enter text to mark part as dirty");
 		final Composite composite = new Composite(this, SWT.NONE);
 		composite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
 		final TreeColumnLayout tcl_composite = new TreeColumnLayout();
@@ -72,20 +66,12 @@ public class ConferenceListComposite extends Composite {
 		treeViewer.setContentProvider(provider);
 	}
 
-	public final void setInput(final Object input) {
+	public void setInput(final Object input) {
 		treeViewer.setInput(input);
 	}
 
 	public void setLabelProvider(final IBaseLabelProvider labelProvider) {
 		treeViewer.setLabelProvider(labelProvider);
-	}
-
-	public Text getText() {
-		return text;
-	}
-
-	public void addModifyListener(final ModifyListener listener) {
-		text.addModifyListener(listener);
 	}
 
 	public void refresh(final TalkClientModel talk) {
