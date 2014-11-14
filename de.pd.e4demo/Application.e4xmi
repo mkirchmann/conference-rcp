@@ -29,7 +29,7 @@
     </mainMenu>
     <trimBars xmi:id="_RnMxG2cmEeS4BuXKlZq-gQ">
       <children xsi:type="menu:ToolBar" xmi:id="_RnMxHGcmEeS4BuXKlZq-gQ" elementId="toolbar:org.eclipse.ui.main.toolbar">
-        <children xsi:type="menu:HandledToolItem" xmi:id="_RnMxHWcmEeS4BuXKlZq-gQ" iconURI="platform:/plugin/de.pd.e4demo/icons/sample.png"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_RnMxHWcmEeS4BuXKlZq-gQ" iconURI="platform:/plugin/de.pd.e4demo/icons/sample.png" tooltip="Edit" command="_Nkw28GeVEeS4BuXKlZq-gQ"/>
         <children xsi:type="menu:HandledToolItem" xmi:id="_RnMxHmcmEeS4BuXKlZq-gQ" iconURI="platform:/plugin/de.pd.e4demo/icons/save_edit.png" command="_RnMKCmcmEeS4BuXKlZq-gQ"/>
       </children>
     </trimBars>
