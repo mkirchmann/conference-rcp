@@ -42,8 +42,8 @@ public class ConferenceListPart {
 	protected Object createConference() {
 		final List<TalkClientModel> list1 = new ArrayList<TalkClientModel>();
 		final ConferenceClientModel conference1 = new ConferenceClientModel("Super Conference", list1);
-		conference1.addChild(new TalkClientModel("Sweet Talk 1", "Talk", conference1));
-		conference1.addChild(new TalkClientModel("Sweet Talk 2", "Talk", conference1));
+		conference1.addChild(new TalkClientModel("Tech Talk 1", "Talk", conference1));
+		conference1.addChild(new TalkClientModel("Tech Talk 2", "Talk", conference1));
 		conference1.addChild(new TalkClientModel("Talk 3", "Talk", conference1));
 
 		final List<TalkClientModel> list2 = new ArrayList<TalkClientModel>();
